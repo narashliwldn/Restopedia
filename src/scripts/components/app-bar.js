@@ -27,7 +27,7 @@ class AppBar extends HTMLElement {
 
       .nav-list {
         list-style-type: none;
-
+        margin-right: 40px;
       }
 
       .nav-item {

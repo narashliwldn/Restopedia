@@ -21,9 +21,11 @@ class HeroBanner extends HTMLElement {
         background-position: center;
         background-color: green;
         color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
-      
+
 
     </style>
     <div class="hero">
