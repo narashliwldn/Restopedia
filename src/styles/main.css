@@ -24,10 +24,74 @@ main {
   padding: 20px;
 }
 
-resto-list {
-
+.content {
+  padding: 16px 32px 32px 32px;
 }
 
-.lists_label {
+.list_label {
+  padding: 10px;
   text-align: center;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    text-justify: inter-word;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.content-card {
+    padding: 8px 16px 16px 16px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.location {
+    position: absolute;
+    text-transform: uppercase;
+    color: #585656;
+    padding: 10px;
+    top: 0;
+    font-size: 18px;
+    border: 2px, solid, #000;
+    height: 40px;
+    background-color: rgba(255,255,255,1);
+}
+
+.rating {
+    color: red;
+    text-decoration: none;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 16px;
+    transition: 0.3s opacity;
+}
+
+.title:hover {
+    opacity: 0.5;
+}
+
+.title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.description {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5em;
 }

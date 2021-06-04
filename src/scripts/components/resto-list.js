@@ -10,7 +10,7 @@ class RestoList extends HTMLElement {
 
   render(){
     this.innerHTML = `
-    <div id="content"></div>
+    <div class="container"></div>
     `;
   }
 

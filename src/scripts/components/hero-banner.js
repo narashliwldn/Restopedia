@@ -23,6 +23,11 @@ class HeroBanner extends HTMLElement {
         color: white;
         background-repeat: no-repeat;
         background-size: cover;
+        opacity: 0.7;
+      }
+
+      .hero_title {
+        
       }
 
 
