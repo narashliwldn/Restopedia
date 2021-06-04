@@ -24,16 +24,84 @@ main {
   padding: 20px;
 }
 
+.navbar {
+  background-color: #b9d7ea;
+  color: #f7fbfc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+}
+
+.header {
+  flex-grow: 4;
+  padding: 10px;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin-right: 40px;
+}
+
+.nav-item {
+  display: inline-block;
+  padding: 20px 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f7fbfc;
+}
+
+.navbar a:hover {
+  color: #769fcd;
+}
+
+.hero {
+  background-image: url("../public/images/heros/hero-image_2.jpg");
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  text-align: center;
+  background-position: center;
+  background-color: green;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* opacity: 0.9; */
+  word-break: break-word;
+}
+
+.hero_title {
+  font-weight: 800;
+  font-family: 'Assistant', sans-serif;
+  font-size: 50px;
+  opacity: 0.8;
+  text-align: center;
+  vertical-align: middle;
+  color: #f7fbfc;
+}
+
+.hero_inner p {
+  font-size: 25px;
+  text-align: center;
+  color: #f7fbfc;
+}
+
 .content {
   padding: 16px 32px 32px 32px;
 }
 
 .list_label {
-  padding: 10px;
-  text-align: center;
-  font-size: 30px;
-  margin: 10px;
-  color: #769fcd;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #769fcd;
+    padding: 10px 16px;
 }
 
 .card {
