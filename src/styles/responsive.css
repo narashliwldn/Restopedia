@@ -31,7 +31,7 @@
     transform: translate(0, 0);
   }
 
-  .nav_list {
+  .nav_item {
     display: list-item;
     border-bottom: 1px solid #e0e0e0;
     width: 100%;
@@ -43,6 +43,12 @@
   #menu {
     display: none;
   }
+}
+
+@media screen and (max-width: 699px) {
+    .hero_inner p {
+      font-size: 10px;
+    }
 }
 
 @media screen and (min-width: 700px) {

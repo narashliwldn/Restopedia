@@ -26,9 +26,10 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
+        }
         },
       {
-        test: /\.svg$/i,
+        test: /\.svg|ttf|woff2|woff|eot$/i,
         use: [
           {
             loader: 'url-loader',

@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
-// import 'font-awesome/css/font-awesome.css';
-// import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
+import '@fortawesome/fontawesome-free/js/fontawesome.min.js'
+
 import '../styles/main.css';
 import '../styles/responsive.css';
 import './components/app-bar.js';

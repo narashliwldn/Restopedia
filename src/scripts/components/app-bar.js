@@ -45,7 +45,7 @@ class AppBar extends HTMLElement {
       }
 
     </style>
-    <nav class="navbar">
+    <nav class="navbar" id="drawer">
       <div class="header">
         <h1 class="header_title">
           Restopedia
@@ -56,6 +56,7 @@ class AppBar extends HTMLElement {
           <li class="nav-item"><a href="#">Favorite</a></li>
           <li class="nav-item"><a href="#">About Us</a></li>
         </ul>
+        <a id="menu" class="nav_menu">☰</a>
     </nav>
     `;
   }
