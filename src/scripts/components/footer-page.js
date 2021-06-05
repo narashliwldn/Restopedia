@@ -11,7 +11,7 @@ class FooterPage extends HTMLElement {
   render(){
     this.innerHTML = `
     <footer class="footer">
-      <p>copyright 2020 - Restopedia</p>
+      <p>copyright © 2020 - Restopedia</p>
     </footer>
     `;
   }

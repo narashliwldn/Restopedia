@@ -65,11 +65,15 @@ main {
 .nav-item {
   display: inline-block;
   padding: 20px 10px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .navbar a {
   text-decoration: none;
   color: #f7fbfc;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .navbar a:hover {
@@ -158,8 +162,10 @@ main {
 }
 
 .rating {
-    color: red;
+    color: #DAA520;
+    font-weight: bold;
     text-decoration: none;
+    font-size: 16px;
 }
 
 .title {

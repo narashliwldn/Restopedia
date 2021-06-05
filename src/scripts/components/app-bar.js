@@ -17,11 +17,11 @@ class AppBar extends HTMLElement {
         </h1>
       </div>
         <ul class="nav-list" id="drawer">
-          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#home">Home</a></li>
           <li class="nav-item"><a href="#">Favorite</a></li>
-          <li class="nav-item"><a href="#">About Us</a></li>
+          <li class="nav-item"><a href="https://github.com/narashliwldn">About Us</a></li>
         </ul>
-        <a id="menu" class="nav_menu">☰</a>
+        <a id="menu" class="nav_menu"><i class="fas fa-bars"></i></a>
     </nav>
     `;
   }
