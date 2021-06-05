@@ -16,7 +16,6 @@
     z-index: 10;
     width: 300px;
     position: absolute;
-
     -webkit-transform: translate(-300px, 0);
     transform: translate(-300px, 0);
 
@@ -30,6 +29,7 @@
 
   #drawer li {
     padding: 5px 0px;
+    flex-direction: column;
   }
 
   #drawer a {
@@ -39,7 +39,9 @@
   }
 
   .nav_item {
+    width: 150%;
     display: list-item;
+    flex-direction: column;
     /* border-bottom: 1px solid #e0e0e0; */
     width: 100%;
     text-align: center;
