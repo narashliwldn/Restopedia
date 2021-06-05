@@ -65,15 +65,12 @@ main {
 .nav-item {
   display: inline-block;
   padding: 20px 10px;
-  min-width: 44px;
-  min-height: 44px;
 }
 
 .navbar a {
   text-decoration: none;
   color: #f7fbfc;
-  min-width: 44px;
-  min-height: 44px;
+  padding: 20px 10px;
 }
 
 .navbar a:hover {
@@ -109,6 +106,7 @@ main {
   font-size: 25px;
   text-align: center;
   color: #f7fbfc;
+  padding-top: 10px;
 }
 
 .content {
@@ -136,6 +134,7 @@ main {
     text-justify: inter-word;
     box-sizing: border-box;
     word-wrap: break-word;
+    text-overflow: ellipsis;
 }
 
 .content-card {
@@ -177,7 +176,7 @@ main {
 
 .title:hover {
     color: #769fcd;
-    cursor: default;
+    cursor: pointer;
 }
 
 .title a {

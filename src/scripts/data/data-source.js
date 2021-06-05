@@ -12,7 +12,7 @@ import('../../DATA.json').then(({default: jsonData}) => {
         <div class="content-card">
           <p tabindex="0" class="rating">Rating: ${data.rating} ★</p>
           <h1 tabindex="0" class="title">${data.name}</h1>
-          <p tabindex="0" class="description">${data.description.slice(0, 100)}...</p>
+          <p tabindex="0" class="description">${data.description.substring(0, 200)}...</p>
         </div>
       </article>
     `;
