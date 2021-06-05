@@ -22,8 +22,8 @@ body {
 
 main {
   position: relative;
-  padding: inherit;
   width: 100%;
+  max-width: 1200px;
 }
 
 .skip-link {
@@ -78,7 +78,7 @@ main {
 }
 
 .hero {
-  background-image: url("../public/images/heros/hero-image_2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 5, 0.5)), url("../public/images/heros/hero-image_2.jpg");
   width: 100%;
   display: flex;
   align-items: center;
