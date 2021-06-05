@@ -11,8 +11,8 @@
 }
 
 @media screen and (max-width: 499px) {
-  .nav {
-    background-color: #fff;
+  #drawer {
+    background-color: #b9d7ea;
     z-index: 10;
     width: 300px;
     position: absolute;
@@ -23,16 +23,26 @@
     transition: transform 0.3s ease;
   }
 
-  .open {
+  #drawer.open {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
   }
 
+  #drawer li {
+    padding: 5px 0px;
+  }
+
+  #drawer a {
+     text-decoration: none;
+     font-size: 15px;
+     color: white;
+  }
+
   .nav_item {
     display: list-item;
-    border-bottom: 1px solid #e0e0e0;
+    /* border-bottom: 1px solid #e0e0e0; */
     width: 100%;
-    text-align: left;
+    text-align: center;
   }
 }
 

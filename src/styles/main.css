@@ -8,7 +8,7 @@ img {
   box-sizing: border-box;
 }
 
-body, html, main {
+body, html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -22,6 +22,8 @@ body {
 
 main {
   position: relative;
+  padding: inherit;
+  width: 100%;
 }
 
 .navbar {
@@ -174,7 +176,6 @@ footer {
   color: white;
   height: 60px;
   width: 100%;
-  position: absolute;
   bottom: 0;
 }
 
