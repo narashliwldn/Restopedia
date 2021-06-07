@@ -57,6 +57,9 @@ main {
   padding: 10px;
 }
 
+.header_title {
+  font-weight: bolder;
+}
 .nav-list {
   list-style-type: none;
   margin-right: 40px;
