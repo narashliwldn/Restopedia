@@ -3,7 +3,7 @@ import data from '../../DATA.json';
 const container = document.querySelector('.container');
 
 let datas = data['restaurants'];
-let dataList = '';
+  let dataList = '';
   datas.forEach(function(data){
     dataList += `
       <article class="card">
@@ -18,4 +18,3 @@ let dataList = '';
     `;
     });
     container.innerHTML = dataList;
-});
