@@ -1,4 +1,4 @@
-import data from '../../DATA.json';
+// import data from '../../DATA.json';
 
 const container = document.querySelector('.container');
 
