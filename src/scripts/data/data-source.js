@@ -1,11 +1,9 @@
-// import data from '../../DATA.json';
+import data from '../../DATA.json';
 
 const container = document.querySelector('.container');
 
-import('../../DATA.json').then(({default: jsonData}) => {
-  // console.log(jsonData);
-  let datas = jsonData['restaurants'];
-  let dataList = '';
+let datas = data['restaurants'];
+let dataList = '';
   datas.forEach(function(data){
     dataList += `
       <article class="card">
