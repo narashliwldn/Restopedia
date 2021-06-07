@@ -1,7 +1,9 @@
+import data from '../../DATA.json';
+
 const container = document.querySelector('.container');
 
 import('../../DATA.json').then(({default: jsonData}) => {
-  console.log(jsonData);
+  // console.log(jsonData);
   let datas = jsonData['restaurants'];
   let dataList = '';
   datas.forEach(function(data){
