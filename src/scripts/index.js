@@ -9,20 +9,20 @@ import './components/hero-banner.js';
 import './components/footer-page.js';
 import './components/resto-list.js'
 import './data/data-source.js';
+import App from './views/app';
 
 // document.addEventListener("DOMContentLouder", main);
 
-const menuButtonElement = document.querySelector("#menu");
-const drawerElement = document.querySelector("#drawer");
-const mainElement = document.querySelector("main");
-
-menuButtonElement.addEventListener("click", event => {
- drawerElement.classList.toggle("open");
- event.stopPropagation();
+const app = new App({
+  button: document.querySelector("#menu"),
+  drawer: document.querySelector("#drawer"),
+  content: document.querySelector("main"),
 });
 
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-mainElement.addEventListener("click", event => {
- drawerElement.classList.remove("open");
- event.stopPropagation();
-})
+window.addEventListener('load', () => {
+  app.renderPage();
+});
