@@ -25,12 +25,14 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
 <article class="card">
   <h2 tabindex="0" class="location"><i class="fas fa-map-marker-alt"></i> ${resto.city}</h2>
-  <img tabindex="0" class="thumbnail" src="${resto.pictureId}" alt="foto restoran ${resto.name}">
+  <img tabindex="0" class="thumbnail" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="foto restoran ${resto.name}">
   <div class="content-card">
     <p tabindex="0" class="rating">Rating: ${resto.rating} ★</p>
-    <h1 tabindex="0" class="title">${resto.name}</h1>
+    <h1 tabindex="0" class="title" id="resto">${resto.name}</h1>
     <p tabindex="0" class="description">${resto.description.substring(0, 200)}...</p>
   </div>
 </article>
 `
 ;
+
+export { createRestoDetailTemplate, createRestoItemTemplate };
