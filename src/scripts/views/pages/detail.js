@@ -13,7 +13,7 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const resto = await RestoDbSource.detailResto(url.id);
     const restoContainer = document.querySelector('#resto');
-    restoContainer.innerHTML = createMovieDetailTemplate(resto);
+    restoContainer.innerHTML = createRestoDetailTemplate(resto);
   },
 };
 
