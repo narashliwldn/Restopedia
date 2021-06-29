@@ -6,14 +6,18 @@ const createRestoDetailTemplate = (resto) => `
 <div class="resto_info">
 <h3>Information</h3>
   <h4>Rating</h4>
-  <p>${resto.rating} ★</p>
-  <h4>City</h4>
+  <p class="resto_rating">${resto.rating} ★</p>
+  <h4>Kota</h4>
   <p>${resto.city}</p>
-  <h4>Address</h4>
+  <h4>Alamat</h4>
   <p>${resto.address}</p>
-  <h4>Categories</h4>
-  <ul>${resto.categories.map((category) => `<li>${category.name}</li>`)}
+  <h4>Kategori Menu</h4>
+  <ul class="resto_category">${resto.categories.map((category) => `<li>${category.name}</li>`)}
   </ul>
+  <h4>Menu Makanan</h4>
+  <ul>${resto.menus.foods.map((food) => `<li>${food.name}</li>`)}</ul>
+  <h4>Menu Minuman</h4>
+  <ul>${resto.menus.drinks.map((drink) => `<li>${drink.name}</li>`)}</ul>
 </div>
 <div class="resto_review">
   <h3>Review</h3>

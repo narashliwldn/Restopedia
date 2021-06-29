@@ -193,20 +193,25 @@ main {
     line-height: 1.5em;
 }
 
+.resto_detail {
+  margin: 0 auto;
+}
+
 .resto_info {
 
 }
 
 .resto_image {
-
+  height: 100%;
+  margin-bottom: 20px;
 }
 
-.resto_title{
-
+.resto_title {
+  padding: 10px;
 }
 
 .resto_review {
-  
+
 }
 
 footer {

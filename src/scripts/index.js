@@ -10,7 +10,7 @@ import './components/footer-page.js';
 import './components/resto-list.js'
 import './data/data-source.js';
 import App from './views/app';
-
+import swRegister from './utils/sw-register';
 // document.addEventListener("DOMContentLouder", main);
 
 const app = new App({
@@ -25,4 +25,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
