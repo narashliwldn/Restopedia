@@ -6,8 +6,9 @@ import { CacheFirst, NetworkFirst } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { skipWaiting, clientsClaim, setCacheNameDetails } from 'workbox-core';
 
-skipWaiting();
+self.skipWaiting();
 clientsClaim();
+const manifest = self.__WB_MANIFEST;
 
 setCacheNameDetails({
   prefix: 'restopedia-app',
@@ -15,8 +16,7 @@ setCacheNameDetails({
   runtime: 'runtime',
 });
 
-precacheAndRoute([
-  ...self.__WB_MANIFEST,
+precacheAndRoute( manifest, [
   {
     url:
     'https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800&display=swap',
@@ -38,7 +38,7 @@ precacheAndRoute([
 );
 
 registerRoute(
-  /^https:\/\/dicoding-restaurant-api\.el\.r\.appspot\.com\/(?:(list|detail))/,
+  /^https:\/\/restaurant-api\.dicoding\.dev\/(?:(list|detail))/,
   new NetworkFirst({
     cacheName: 'dicoding-restaurant-api',
     plugins: [
