@@ -8,7 +8,7 @@ import './components/app-bar.js';
 import './components/hero-banner.js';
 import './components/footer-page.js';
 import './components/resto-list.js'
-import './data/data-source.js';
+// import './data/data-source.js';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 // document.addEventListener("DOMContentLouder", main);

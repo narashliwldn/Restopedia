@@ -5,12 +5,13 @@
 }
 
 .resto_menu {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
 
 @media screen and (min-width: 300px) {
-  .container {
+  .container, .resto_menu {
     grid-template-columns: 1fr;
   }
 }
@@ -112,7 +113,7 @@
     font-size: 25px;
   }
 
-  .location {
+  .location, .rating, .resto_detail p {
     font-size: 15px;
   }
 
@@ -120,13 +121,10 @@
     font-size: 12px;
   }
 
-  .title {
+  .title, .header_resto_info {
     font-size: 15.5px;
   }
 
-  .rating {
-    font-size: 15px;
-  }
 }
 
 @media screen and (max-width: 360px) {
@@ -153,7 +151,7 @@
 }
 
 @media screen and (min-width: 700px) {
-  .container {
+  .container, .resto_menu {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 16px;
   }
