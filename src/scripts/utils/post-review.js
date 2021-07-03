@@ -12,11 +12,13 @@ const PostReview = (url, name, review) => {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const date = new Date().toLocaleDateString('id-ID', options);
   const newReview = `
-    <div class="resto_review-item">
-        <p class="resto_review-item_title"><i title="restaurant" class="fa fa-user-circle" style="font-size:1.3em;"></i>&nbsp;${name}</p>
-        <p class="resto_review-item_date">${date}</p>
-      <div class="resto_review-item_reviewers">
-        ${review}
+    <div class="resto_review">
+      <div class="resto_review-item">
+        <div class="content-card">
+          <h4 class="resto_review-item_title">${name}</h4>
+          <p class="resto_review-item_date">${date}</p>
+          <p class="resto_review-item_reviewers">${review}</p>
+        </div>
       </div>
     </div>
     `;

@@ -4,7 +4,8 @@ const CONFIG = {
   CACHE_NAME: 'Restopedia-V1',
   DATABASE_NAME: 'restopedia-database',
   DATABASE_VERSION: 1,
-  OBJECT_STORE_NAME: 'restaurant'
+  OBJECT_STORE_NAME: 'restaurant',
+  API_KEY: 12345,
 };
 
 export default CONFIG;

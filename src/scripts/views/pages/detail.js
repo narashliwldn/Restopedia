@@ -20,7 +20,7 @@ const Detail = {
               <label for="inputReview" class="form-label">Review</label>
               <input name="inputReview" type="text" class="form-control" id="inputReview">
             </div>
-            <button id="submit-review" type="submit" class="btn2">Submit</button>
+            <button id="submit-review" type="submit" class="btnSubmit">Submit</button>
           </form>
         </div>
       <div id="reviewers" class="resto_detail-review"></div>

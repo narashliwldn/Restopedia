@@ -327,6 +327,26 @@ form {
   margin-top: 0.5em;
 }
 
+.btnSubmit {
+  margin: 1.3em;
+  padding: 0.375em 0.75em;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #769FCD;
+  border: 1px solid transparent;
+  margin: 1.3em 0;
+  font-size: large;
+  border-radius: 0.276em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btnSubmit:hover {
+  background-color: #D6E6F2;
+}
+
 /*
   footer
 */

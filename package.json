@@ -23,6 +23,7 @@
     "file-loader": "^6.2.0",
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^4.3.0",
+    "image-minimizer-webpack-plugin": "^2.2.0",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^3.5.0",
     "karma": "^5.1.0",
