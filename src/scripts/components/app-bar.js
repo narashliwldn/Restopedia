@@ -1,14 +1,5 @@
 class AppBar extends HTMLElement {
-  constructor() {
-    super();
-
-  }
-
-  connectedCallback(){
-    this.render();
-  }
-
-  render(){
+  render() {
     this.innerHTML = `
     <nav class="navbar">
       <div class="header">
@@ -18,7 +9,7 @@ class AppBar extends HTMLElement {
       </div>
         <button type="button" id="menu" class="nav_menu" aria-label="navigation button"><i class="fas fa-bars"></i></button>
         <ul class="nav-list" id="drawer">
-          <li class="nav-item"><a href="/">Home</a></li>
+          <li class="nav-item"><a href="#/home">Home</a></li>
           <li class="nav-item"><a href="#/favorite">Favorite</a></li>
           <li class="nav-item"><a href="https://github.com/narashliwldn">About Us</a></li>
         </ul>
@@ -27,4 +18,4 @@ class AppBar extends HTMLElement {
   }
 }
 
-customElements.define("app-bar", AppBar);
+customElements.define('app-bar', AppBar);

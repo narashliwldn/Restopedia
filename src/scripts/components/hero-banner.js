@@ -1,14 +1,9 @@
 class HeroBanner extends HTMLElement {
-  constructor() {
-    super();
-
-  }
-
-  connectedCallback(){
+  connectedCallback() {
     this.render();
   }
 
-  render(){
+  render() {
     this.innerHTML = `
     <div class="hero">
       <div class="hero_inner">
@@ -21,4 +16,4 @@ class HeroBanner extends HTMLElement {
   }
 }
 
-customElements.define("hero-banner", HeroBanner);
+customElements.define('hero-banner', HeroBanner);

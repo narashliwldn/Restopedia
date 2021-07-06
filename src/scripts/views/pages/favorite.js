@@ -2,7 +2,7 @@ import FavoriteRestoIdb from '../../data/favoriteresto-idb';
 import { createRestoItemTemplate } from '../templates/template-creator';
 
 const Favorite = {
-  async render(){
+  async render() {
     return `
     <hero-banner></hero-banner>
       <div class="content">
@@ -14,13 +14,12 @@ const Favorite = {
     `;
   },
 
-  async afterRender(){
+  async afterRender() {
     const restos = await FavoriteRestoIdb.getAllResto();
     const restoContainer = document.querySelector('#restos');
     restos.forEach((resto) => {
       restoContainer.innerHTML += createRestoItemTemplate(resto);
     });
-
   },
 
 };

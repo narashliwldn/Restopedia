@@ -16,7 +16,7 @@ setCacheNameDetails({
   runtime: 'runtime',
 });
 
-precacheAndRoute( manifest, [
+precacheAndRoute(manifest, [
   {
     url:
     'https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800&display=swap',
@@ -30,12 +30,11 @@ precacheAndRoute( manifest, [
     url:
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css',
     revision: 1,
-  }
+  },
 ],
 {
   ignoreURLParametersMatching: [/.*/],
-},
-);
+});
 
 registerRoute(
   /^https:\/\/restaurant-api\.dicoding\.dev\/(?:(list|detail))/,

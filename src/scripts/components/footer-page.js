@@ -1,14 +1,9 @@
 class FooterPage extends HTMLElement {
-  constructor() {
-    super();
-
-  }
-
-  connectedCallback(){
+  connectedCallback() {
     this.render();
   }
 
-  render(){
+  render() {
     this.innerHTML = `
     <footer class="footer">
       <p>copyright © 2020 - Restopedia</p>
@@ -17,4 +12,4 @@ class FooterPage extends HTMLElement {
   }
 }
 
-customElements.define("footer-page", FooterPage);
+customElements.define('footer-page', FooterPage);

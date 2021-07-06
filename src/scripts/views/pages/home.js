@@ -2,10 +2,10 @@ import RestoDbSource from '../../data/restodb-source';
 import { createRestoItemTemplate } from '../templates/template-creator';
 
 const Home = {
-  async render(){
+  async render() {
     return `
     <hero-banner></hero-banner>
-        <div class="content">
+        <div class="content" id="maincontent">
           <div class="lists">
             <h2 class="list_label">Yuk Eksplor Restoran</h2>
             <resto-list></resto-list>
@@ -14,7 +14,7 @@ const Home = {
     `;
   },
 
-  async afterRender(){
+  async afterRender() {
     const restos = await RestoDbSource.homeResto();
     const restoContainer = document.querySelector('.container');
     restos.forEach((resto) => {

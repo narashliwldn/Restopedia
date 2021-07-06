@@ -3,7 +3,7 @@ import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 
 class App {
-  constructor({button, drawer, content}) {
+  constructor({ button, drawer, content }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
@@ -11,13 +11,12 @@ class App {
     this._initialAppShell();
   }
 
-  _initialAppShell(){
+  _initialAppShell() {
     DrawerInitiator.init({
       button: this._button,
       drawer: this._drawer,
       content: this._content,
     });
-
   }
 
   async renderPage() {

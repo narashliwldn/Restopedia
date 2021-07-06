@@ -1,19 +1,13 @@
 class RestoList extends HTMLElement {
-  constructor() {
-    super();
-
-  }
-
-  connectedCallback(){
+  connectedCallback() {
     this.render();
   }
 
-  render(){
+  render() {
     this.innerHTML = `
     <div class="container"></div>
     `;
   }
-
 }
 
-customElements.define("resto-list", RestoList);
+customElements.define('resto-list', RestoList);

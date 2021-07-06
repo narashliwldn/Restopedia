@@ -40,9 +40,7 @@ const createRestoItemTemplate = (resto) => `
       <p tabindex="0" class="description">${resto.description.substring(0, 200)}...</p>
     </div>
   </article>
-`
-;
-
+`;
 const createCustomerReviewTemplate = (user) => `
   <div class="resto_review">
     <div class="resto_review-item">
@@ -53,21 +51,21 @@ const createCustomerReviewTemplate = (user) => `
       </div>
     </div>
   </div>
-`
-;
-
+`;
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
-`
-;
-
-const createLikedButtonTemplate = () =>`
+`;
+const createLikedButtonTemplate = () => `
   <button aria-label="unlike this movie" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
-`
-;
-
-export { createRestoDetailTemplate, createRestoItemTemplate, createCustomerReviewTemplate, createLikeButtonTemplate, createLikedButtonTemplate };
+`;
+export {
+  createRestoDetailTemplate,
+  createRestoItemTemplate,
+  createCustomerReviewTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};

@@ -5,7 +5,7 @@ import LikeButtonIniator from '../../utils/like-button-initiator';
 import PostReview from '../../utils/post-review';
 
 const Detail = {
-  async render(){
+  async render() {
     return `
     <div class="content">
       <div id="resto" class="resto_detail"></div>
@@ -29,7 +29,7 @@ const Detail = {
     `;
   },
 
-  async afterRender(){
+  async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const resto = await RestoDbSource.detailResto(url.id);
     const restoContainer = document.querySelector('#resto');
@@ -42,7 +42,7 @@ const Detail = {
       userRateContainer.innerHTML += createCustomerReviewTemplate(userItem);
     });
 
-    headerReview.innerHTML = "Review";
+    headerReview.innerHTML = 'Review';
 
     LikeButtonIniator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
