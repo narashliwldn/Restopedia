@@ -11,7 +11,6 @@ import './components/resto-list';
 // import './data/data-source.js';
 import App from './views/app';
 import swRegister from './utils/sw-register';
-// document.addEventListener("DOMContentLouder", main);
 
 const app = new App({
   button: document.querySelector('#menu'),

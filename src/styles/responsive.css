@@ -40,7 +40,6 @@
   }
 
   #drawer li {
-    /* padding: 5px 0px; */
     flex-direction: column;
   }
 
@@ -55,7 +54,6 @@
   .nav-item {
     display: list-item;
     flex-direction: column;
-    /* border-bottom: 1px solid #e0e0e0; */
     width: 100%;
     text-align: center;
   }
@@ -68,6 +66,16 @@
     min-width: 44px;
     min-height: 44px;
     font-size: 25px;
+  }
+
+  .btnSubmit {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .title a {
+    min-width: 44px;
+    min-height: 44px;
   }
 }
 
@@ -85,18 +93,6 @@
     padding: 20px 0 10px 10px;
     font-size: 18px;
   }
-
-  .description {
-    font-size: 12.5px;
-  }
-
-  .title {
-    font-size: 16.5px;
-  }
-
-  .rating {
-    font-size: 16px;
-  }
 }
 
 @media screen and (max-width: 500px) {
@@ -106,47 +102,12 @@
   }
   .hero_inner p {
     padding-top: 20px;
-    font-size: 12px;
   }
-
-  .list_label {
-    font-size: 25px;
-  }
-
-  .location, .rating, .resto_detail p {
-    font-size: 15px;
-  }
-
-  .description {
-    font-size: 12px;
-  }
-
-  .title, .header_resto_info {
-    font-size: 15.5px;
-  }
-
 }
 
 @media screen and (max-width: 360px) {
-  .location {
-    font-size: 12px;
-    text-align: center;
-  }
-
   .hero_inner p {
     font-size: 1em;
-  }
-
-  .description {
-    font-size: 11px;
-  }
-
-  .title {
-    font-size: 15px;
-  }
-
-  .rating {
-    font-size: 14px;
   }
 }
 

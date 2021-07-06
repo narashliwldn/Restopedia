@@ -170,7 +170,7 @@ main {
     color: #DAA520;
     font-weight: bold;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .title {
@@ -178,7 +178,6 @@ main {
     font-size: 18px;
     margin-top: 16px;
     transition: 0.3s opacity;
-
 }
 
 .title:hover {
@@ -189,11 +188,12 @@ main {
 .title a {
     text-decoration: none;
     color: inherit;
+    padding: 20px 20px 20px 0px;
 }
 
 .description {
     margin-top: 16px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5em;
 }
 
@@ -303,7 +303,7 @@ form {
 .form-control {
   display: block;
   width: 100%;
-  min-height: 1em;
+  min-height: 44px;
   padding: 0.3em;
   font-size: 1em;
   font-weight: normal;
@@ -329,7 +329,8 @@ form {
 }
 
 .btnSubmit {
-  margin: 1.3em;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375em 0.75em;
   font-weight: 700;
   color: white;
@@ -337,7 +338,6 @@ form {
   vertical-align: middle;
   background-color: #769FCD;
   border: 1px solid transparent;
-  margin: 1.3em 0;
   font-size: large;
   border-radius: 0.276em;
   cursor: pointer;
