@@ -1,13 +1,16 @@
 import UrlParser from '../../routes/url-parser';
 import RestoDbSource from '../../data/restodb-source';
 import { createRestoDetailTemplate, createCustomerReviewTemplate } from '../templates/template-creator';
-import LikeButtonIniator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import PostReview from '../../utils/post-review';
+import FavoriteRestoIdb from '../../data/favoriteresto-idb';
+import SpinnerLoading from '../templates/spinner-loading';
 
 const Detail = {
   async render() {
     return `
     <div class="content">
+      <div id="loading"></div>
       <div id="resto" class="resto_detail"></div>
       <h3 id="review_title" class="header_detail"></h3>
       <div class="form-review">
@@ -31,30 +34,42 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const resto = await RestoDbSource.detailResto(url.id);
     const restoContainer = document.querySelector('#resto');
     const userRateContainer = document.querySelector('#reviewers');
     const headerReview = document.querySelector('#review_title');
+    const loading = document.querySelector('#loading');
+    const skiplink = document.querySelector('.skip-link');
 
-    restoContainer.innerHTML = createRestoDetailTemplate(resto.restaurant);
-
-    resto.restaurant.customerReviews.forEach((userItem) => {
-      userRateContainer.innerHTML += createCustomerReviewTemplate(userItem);
-    });
-
+    skiplink.style.display = 'none';
+    loading.innerHTML = SpinnerLoading();
     headerReview.innerHTML = 'Review';
 
-    LikeButtonIniator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      resto: {
-        id: resto.restaurant.id,
-        name: resto.restaurant.name,
-        description: resto.restaurant.description,
-        city: resto.restaurant.city,
-        rating: resto.restaurant.rating,
-        pictureId: resto.restaurant.pictureId,
-      },
-    });
+    try {
+      const resto = await RestoDbSource.detailResto(url.id);
+      restoContainer.innerHTML = createRestoDetailTemplate(resto.restaurant);
+
+      resto.restaurant.customerReviews.forEach((userItem) => {
+        userRateContainer.innerHTML += createCustomerReviewTemplate(userItem);
+      });
+
+      LikeButtonPresenter.init({
+        likeButtonContainer: document.querySelector('#likeButtonContainer'),
+        favoriteResto: FavoriteRestoIdb,
+        resto: {
+          id: resto.restaurant.id,
+          name: resto.restaurant.name,
+          description: resto.restaurant.description,
+          city: resto.restaurant.city,
+          rating: resto.restaurant.rating,
+          pictureId: resto.restaurant.pictureId,
+        },
+      });
+      loading.style.display = 'none';
+    } catch (error) {
+      restoContainer.innerHTML = `<p>Error: ${error}</p>`;
+      console.log('gagal memuat data');
+      loading.style.display = 'none';
+    }
 
     const btnSubmit = document.querySelector('#submit-review');
     const nameInput = document.querySelector('#inputName');

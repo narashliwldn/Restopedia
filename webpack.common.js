@@ -1,8 +1,11 @@
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {InjectManifest} = require('workbox-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
 const path = require('path');
 
 module.exports = {
@@ -29,15 +32,15 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
-        }
         },
+      },
       {
         test: /\.svg|ttf|woff2|woff|eot$/i,
         use: [
           {
             loader: 'url-loader',
             options: {
-            encoding: false,
+              encoding: false,
             },
           },
         ],
@@ -45,6 +48,7 @@ module.exports = {
     ],
   },
   plugins: [
+    // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
@@ -76,12 +80,20 @@ module.exports = {
           src: path.resolve('src/public/images/icons/icon.png'),
           sizes: [64, 96, 128, 192, 256, 384, 512], // multiple sizes
           destination: path.join('images', 'icons'),
-          purpose: 'any maskable'
+          purpose: 'any maskable',
         },
-      ]
+      ],
     }),
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+    }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+      ],
     }),
   ],
 };

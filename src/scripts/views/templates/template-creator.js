@@ -1,30 +1,30 @@
 import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
-  <h2 class="resto_title">${resto.name}</h2>
-  <img class="resto_image" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
-  <h3 class="header_detail">Information</h3>
+  <h2 tabindex="0" class="resto_title">${resto.name}</h2>
+  <img tabindex="0" class="resto_image" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
+  <h3 tabindex="0" class="header_detail">Information</h3>
   <div class="resto_info">
-    <h4 class="header_resto_info">Rating</h4>
-      <p class="resto_rating">${resto.rating} ★</p>
-    <h4 class="header_resto_info">Kota</h4>
-      <p>${resto.city}</p>
-    <h4 class="header_resto_info">Alamat</h4>
-      <p>${resto.address}</p>
-    <h4 class="header_resto_info">Deskripsi</h4>
-      <p>${resto.description}</p>
-    <h4 class="header_resto_info">Kategori Menu</h4>
-      <ul class="resto_category">${resto.categories.map((category) => `<li>${category.name}</li>`).join(' ')}
+    <h4 tabindex="0" class="header_resto_info">Rating</h4>
+      <p tabindex="0" class="resto_rating">${resto.rating} ★</p>
+    <h4 tabindex="0" class="header_resto_info">Kota</h4>
+      <p tabindex="0" >${resto.city}</p>
+    <h4 tabindex="0" class="header_resto_info">Alamat</h4>
+      <p tabindex="0">${resto.address}</p>
+    <h4 tabindex="0" class="header_resto_info">Deskripsi</h4>
+      <p tabindex="0">${resto.description}</p>
+    <h4 tabindex="0" class="header_resto_info">Kategori Menu</h4>
+      <ul class="resto_category">${resto.categories.map((category) => `<li tabindex="0">${category.name}</li>`).join(' ')}
       </ul>
-    <h3 class="header_detail">Menu</h3>
+    <h3 tabindex="0" class="header_detail">Menu</h3>
     <div class="resto_menu">
       <div class="card content-card">
-      <h4>Menu Makanan</h4>
-        <ul>${resto.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}</ul>
+      <h4 tabindex="0">Menu Makanan</h4>
+        <ul>${resto.menus.foods.map((food) => `<li tabindex="0">${food.name}</li>`).join('')}</ul>
       </div>
       <div class="card content-card">
-      <h4>Menu Minuman</h4>
-        <ul>${resto.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}</ul>
+      <h4 tabindex="0">Menu Minuman</h4>
+        <ul>${resto.menus.drinks.map((drink) => `<li tabindex="0">${drink.name}</li>`).join('')}</ul>
       </div>
     </div>
   </div>
@@ -45,20 +45,20 @@ const createCustomerReviewTemplate = (user) => `
   <div class="resto_review">
     <div class="resto_review-item">
       <div class="content-card">
-        <h4 class="resto_review-item_title">${user.name}</h4>
-        <p class="resto_review-item_date">${user.date}</p>
-        <p class="resto_review-item_reviewers">${user.review}</p>
+        <h4 tabindex="0" class="resto_review-item_title">${user.name}</h4>
+        <p tabindex="0" class="resto_review-item_date">${user.date}</p>
+        <p tabindex="0" class="resto_review-item_reviewers">${user.review}</p>
       </div>
     </div>
   </div>
 `;
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+const createLikeRestoButtonTemplate = () => `
+  <button aria-label="like this resto" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+const createUnlikeRestoButtonTemplate = () => `
+  <button aria-label="unlike this resto" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
@@ -66,6 +66,6 @@ export {
   createRestoDetailTemplate,
   createRestoItemTemplate,
   createCustomerReviewTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestoButtonTemplate,
+  createUnlikeRestoButtonTemplate,
 };
