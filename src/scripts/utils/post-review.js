@@ -8,7 +8,7 @@ const PostReview = (url, name, review) => {
   };
   RestoDbSource.postRestaurant(dataInput);
 
-  const reviewContainer = document.querySelector('.resto_review');
+  const reviewContainer = document.querySelector('#reviewers');
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const date = new Date().toLocaleDateString('id-ID', options);
   const newReview = `

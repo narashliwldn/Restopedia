@@ -1,8 +1,10 @@
 import CONFIG from '../../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const createRestoDetailTemplate = (resto) => `
   <h2 tabindex="0" class="resto_title">${resto.name}</h2>
-  <img tabindex="0" class="resto_image" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
+  <img tabindex="0" class="resto_image lazyload" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
   <h3 tabindex="0" class="header_detail">Information</h3>
   <div class="resto_info">
     <h4 tabindex="0" class="header_resto_info">Rating</h4>
@@ -33,7 +35,7 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
   <article class="card">
     <h2 tabindex="0" class="location"><i class="fas fa-map-marker-alt"></i> ${resto.city}</h2>
-    <img tabindex="0" class="thumbnail" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="foto restoran ${resto.name}">
+    <img tabindex="0" class="thumbnail lazyload" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="foto restoran ${resto.name}">
     <div class="content-card">
       <p tabindex="0" class="rating">Rating: ${resto.rating} ★</p>
       <h1 tabindex="0" class="title"><a href="#/detail/${resto.id}">${resto.name}</a></h1>

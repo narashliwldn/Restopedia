@@ -79,10 +79,12 @@ main {
   color: #769fcd;
 }
 
-/*hero jumbotron*/
+/*
+hero jumbotron
+*/
 
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 5, 0.5)), url("../public/images/heros/hero-image_2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 5, 0.5)), url("./src/public/images/heros/hero-image_2-large.jpg");
   width: 100%;
   display: flex;
   align-items: center;

@@ -1,4 +1,3 @@
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -6,6 +5,7 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 
 module.exports = {
@@ -24,6 +24,9 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+            options: {
+              url: false,
+            },
           },
         ],
       },
@@ -48,7 +51,6 @@ module.exports = {
     ],
   },
   plugins: [
-    // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
@@ -61,6 +63,9 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+          globOptions: {
+            ignore: ['**/images/**'],
+          },
         },
       ],
     }),
@@ -79,7 +84,7 @@ module.exports = {
         {
           src: path.resolve('src/public/images/icons/icon.png'),
           sizes: [64, 96, 128, 192, 256, 384, 512], // multiple sizes
-          destination: path.join('images', 'icons'),
+          destination: path.join('src', 'public', 'images', 'icons'),
           purpose: 'any maskable',
         },
       ],
@@ -95,5 +100,6 @@ module.exports = {
         }),
       ],
     }),
+    // new BundleAnalyzerPlugin(),
   ],
 };
