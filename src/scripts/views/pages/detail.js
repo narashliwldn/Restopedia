@@ -66,8 +66,7 @@ const Detail = {
       });
       loading.style.display = 'none';
     } catch (error) {
-      restoContainer.innerHTML = `<p>Error: ${error}</p>`;
-      console.log('gagal memuat data');
+      restoContainer.innerHTML = `Error: ${error} gagal memuat data. Silahkan refresh ulang`;
       loading.style.display = 'none';
     }
 
@@ -75,8 +74,8 @@ const Detail = {
     const nameInput = document.querySelector('#inputName');
     const reviewInput = document.querySelector('#inputReview');
 
-    btnSubmit.addEventListener('click', (e) => {
-      e.preventDefault();
+    btnSubmit.addEventListener('click', (event) => {
+      event.preventDefault();
       if (nameInput.value === '' || reviewInput.value === '') {
         // eslint-disable-next-line no-alert
         alert('Inputan tidak boleh ada yang kosong');
@@ -87,6 +86,16 @@ const Detail = {
         nameInput.value = '';
         reviewInput.value = '';
       }
+    });
+    btnSubmit.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (!navigator.onLine) {
+        alert('Maaf tidak bisa memberi komentar. Silahkan refresh ulang');
+      } else {
+        PostReview(url, nameInput.value, reviewInput.value);
+      }
+      nameInput.value = '';
+      reviewInput.value = '';
     });
   },
 };

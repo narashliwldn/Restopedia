@@ -22,7 +22,11 @@ const PostReview = (url, name, review) => {
       </div>
     </div>
     `;
-  reviewContainer.innerHTML += newReview;
+  if (!navigator.onLine) {
+    reviewContainer.innerHTML = '';
+  } else {
+    reviewContainer.innerHTML += newReview;
+  }
 };
 
 export default PostReview;

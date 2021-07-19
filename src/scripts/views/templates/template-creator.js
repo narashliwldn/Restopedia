@@ -35,7 +35,7 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
   <article class="card">
     <h2 tabindex="0" class="location"><i class="fas fa-map-marker-alt"></i> ${resto.city}</h2>
-    <img tabindex="0" class="thumbnail lazyload" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="foto restoran ${resto.name}">
+    <img tabindex="0" class="thumbnail lazyload" src="placeholder.jpeg" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="foto restoran ${resto.name}">
     <div class="content-card">
       <p tabindex="0" class="rating">Rating: ${resto.rating} ★</p>
       <h1 tabindex="0" class="title"><a href="#/detail/${resto.id}">${resto.name}</a></h1>
@@ -64,10 +64,28 @@ const createUnlikeRestoButtonTemplate = () => `
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
+const createSkeletonTemplate = (count) => {
+  let template = '';
+  for (let i = 0; i < count; i++) {
+    template += `
+    <article class="card">
+      <h2 tabindex="0" class="location"><i class="fas fa-map-marker-alt"></i> Kota </h2>
+      <img tabindex="0" class="thumbnail lazyload" src="placeholder.jpeg" alt="foto skeleton">
+      <div class="content-card">
+        <p tabindex="0" class="rating">Rating: Rating ★</p>
+        <h1 tabindex="0" class="title"><a href="#/detail/id">Nama Resto</a></h1>
+        <p tabindex="0" class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sequi ullam ad mollitia cupiditate aut iure officia, voluptate, sapiente modi quisquam est quod quas recusandae quo saepe atque nisi blanditiis.</p>
+      </div>
+    </article>
+  `;
+  }
+  return template;
+};
 export {
   createRestoDetailTemplate,
   createRestoItemTemplate,
   createCustomerReviewTemplate,
   createLikeRestoButtonTemplate,
   createUnlikeRestoButtonTemplate,
+  createSkeletonTemplate,
 };

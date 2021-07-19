@@ -1,18 +1,18 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -20,12 +20,16 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
           },
+          // {
+          //   loader: 'style-loader',
+          // },
           {
             loader: 'css-loader',
             options: {
               url: false,
+              minimize: true,
             },
           },
         ],
@@ -84,7 +88,21 @@ module.exports = {
         {
           src: path.resolve('src/public/images/icons/icon.png'),
           sizes: [64, 96, 128, 192, 256, 384, 512], // multiple sizes
-          destination: path.join('src', 'public', 'images', 'icons'),
+          destination: path.join('src', 'public', 'images', 'icons', 'android'),
+          purpose: 'any maskable',
+        },
+        {
+          src: path.resolve('src/public/images/icons/icon.png'),
+          sizes: [120, 152, 167, 180, 1024], // multiple sizes
+          destination: path.join('src', 'public', 'images', 'icons', 'ios'),
+          ios: true,
+          purpose: 'any maskable',
+        },
+        {
+          src: path.resolve('src/public/images/icons/icon.png'),
+          sizes: 1024,
+          destination: path.join('src', 'public', 'images', 'icons', 'ios'),
+          ios: 'startup',
           purpose: 'any maskable',
         },
       ],
@@ -100,6 +118,6 @@ module.exports = {
         }),
       ],
     }),
-    // new BundleAnalyzerPlugin(),
+    new MiniCssExtractPlugin({ filename: '[name].css' }),
   ],
 };

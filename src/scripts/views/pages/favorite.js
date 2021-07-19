@@ -1,5 +1,5 @@
 import FavoriteRestoIdb from '../../data/favoriteresto-idb';
-import { createRestoItemTemplate } from '../templates/template-creator';
+import { createRestoItemTemplate, createSkeletonTemplate } from '../templates/template-creator';
 import SpinnerLoading from '../templates/spinner-loading';
 
 const Favorite = {
@@ -17,11 +17,13 @@ const Favorite = {
   },
 
   async afterRender() {
-    const restos = await FavoriteRestoIdb.getAllResto();
     const restoContainer = document.querySelector('#restos');
+    restoContainer.innerHTML = createSkeletonTemplate(3);
+    const restos = await FavoriteRestoIdb.getAllResto();
     const skiplink = document.querySelector('.skip-link');
 
     skiplink.style.display = 'none';
+    restoContainer.innerHTML = '';
 
     if (restos.length === 0) {
       restoContainer.innerHTML = `

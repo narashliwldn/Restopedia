@@ -1,5 +1,5 @@
 import RestoDbSource from '../../data/restodb-source';
-import { createRestoItemTemplate } from '../templates/template-creator';
+import { createRestoItemTemplate, createSkeletonTemplate } from '../templates/template-creator';
 import SpinnerLoading from '../templates/spinner-loading';
 
 const Home = {
@@ -10,7 +10,8 @@ const Home = {
         <div class="content" id="maincontent">
           <div class="lists">
             <h2 class="list_label">Yuk Eksplor Restoran</h2>
-            <resto-list></resto-list>
+            <resto-list>
+            </resto-list>
           </div>
         </div>
     `;
@@ -22,14 +23,16 @@ const Home = {
     loading.innerHTML = SpinnerLoading();
 
     try {
+      restoContainer.innerHTML = createSkeletonTemplate(20);
       const restos = await RestoDbSource.homeResto();
+      restoContainer.innerHTML = '';
       restos.forEach((resto) => {
         restoContainer.innerHTML += createRestoItemTemplate(resto);
       });
       loading.style.display = 'none';
     } catch (error) {
       loading.style.display = 'none';
-      restoContainer.innerHTML = `Error: ${error}, swipe up of press F5 to refresh `;
+      restoContainer.innerHTML = `Error: ${error}, gagal memuat data. Silahkan refresh ulang `;
     }
   },
 };
