@@ -73,8 +73,8 @@ const createSkeletonTemplate = (count) => {
       <img tabindex="0" class="thumbnail lazyload" src="placeholder.jpeg" alt="foto skeleton">
       <div class="content-card">
         <p tabindex="0" class="rating">Rating: Rating ★</p>
-        <h1 tabindex="0" class="title"><a href="#/detail/id">Nama Resto</a></h1>
-        <p tabindex="0" class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sequi ullam ad mollitia cupiditate aut iure officia, voluptate, sapiente modi quisquam est quod quas recusandae quo saepe atque nisi blanditiis.</p>
+        <h1 tabindex="0" class="title skeleton"><a href="#/detail/id">Nama Resto</a></h1>
+        <p tabindex="0" class="description skeleton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sequi ullam ad mollitia cupiditate aut iure officia, voluptate, sapiente modi quisquam est quod quas recusandae quo saepe atque nisi blanditiis.</p>
       </div>
     </article>
   `;

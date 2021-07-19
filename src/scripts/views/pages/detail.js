@@ -33,6 +33,14 @@ const Detail = {
   },
 
   async afterRender() {
+    let scriptElement = document.querySelector('script[src="https://kit.fontawesome.com/54d44760a9.js"]');
+
+    if (!scriptElement) {
+      scriptElement = document.createElement('script');
+      scriptElement.src = 'https://kit.fontawesome.com/54d44760a9.js';
+      document.body.appendChild(scriptElement);
+    }
+
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restoContainer = document.querySelector('#resto');
     const userRateContainer = document.querySelector('#reviewers');

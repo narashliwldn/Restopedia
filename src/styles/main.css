@@ -418,3 +418,13 @@ footer p {
   align-items: center;
   text-align: center;
 }
+
+/*
+skeleton
+*/
+
+.skeleton {
+    user-select: none;
+    background-color: #eeeeee;
+    color: #eeeeee;
+}
