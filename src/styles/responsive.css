@@ -19,7 +19,6 @@
 @media screen and (max-width: 499px) {
   .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 5, 0.5)), url("./src/public/images/heros/hero-image_2-small.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 5, 0.5)), url("./src/public/images/heros/hero-image_2-small.jpg");
   }
 
   #drawer {
@@ -85,6 +84,10 @@
 }
 
 @media screen and (min-width: 500px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 5, 0.5)), url("./src/public/images/heros/hero-image_2-medium.jpg");
+  }
+
   #menu {
     display: none;
   }
@@ -124,6 +127,10 @@
 }
 
 @media screen and (min-width:900px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 5, 0.5)), url("./src/public/images/heros/hero-image_2-large.jpg");
+  }
+
   .container {
     grid-template-columns: repeat(3, 1fr);
   }

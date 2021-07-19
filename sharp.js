@@ -18,6 +18,12 @@ fs.readdirSync(target)
         .join('.')}-large.jpg`));
 
     sharp(`${target}/${image}`)
+      .resize(600)
+      .toFile(path.resolve(__dirname, `${destination}/${image.split('.')
+        .slice(0, -1)
+        .join('.')}-medium.jpg`));
+
+    sharp(`${target}/${image}`)
       .resize(480)
       .toFile(path.resolve(__dirname, `${destination}/${image.split('.')
         .slice(0, -1)

@@ -84,7 +84,6 @@ hero jumbotron
 */
 
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 5, 0.5)), url("./src/public/images/heros/hero-image_2-large.jpg");
   width: 100%;
   display: flex;
   align-items: center;
