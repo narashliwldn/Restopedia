@@ -1,5 +1,5 @@
 import RestoDbSource from '../../data/restodb-source';
-import { createRestoItemTemplate, createSkeletonTemplate } from '../templates/template-creator';
+import { createRestoItemTemplate, createSkeletonItemTemplate } from '../templates/template-creator';
 import SpinnerLoading from '../templates/spinner-loading';
 
 const Home = {
@@ -31,7 +31,7 @@ const Home = {
     loading.innerHTML = SpinnerLoading();
 
     try {
-      restoContainer.innerHTML = createSkeletonTemplate(20);
+      restoContainer.innerHTML = createSkeletonItemTemplate(20);
       const restos = await RestoDbSource.homeResto();
       restoContainer.innerHTML = '';
       restos.forEach((resto) => {

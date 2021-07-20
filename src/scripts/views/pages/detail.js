@@ -1,6 +1,11 @@
 import UrlParser from '../../routes/url-parser';
 import RestoDbSource from '../../data/restodb-source';
-import { createRestoDetailTemplate, createCustomerReviewTemplate } from '../templates/template-creator';
+import {
+  createRestoDetailTemplate,
+  createCustomerReviewTemplate,
+  createSkeletonDetailTemplate,
+  createSkeletonReviewTemplate,
+} from '../templates/template-creator';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
 import PostReview from '../../utils/post-review';
 import FavoriteRestoIdb from '../../data/favoriteresto-idb';
@@ -53,8 +58,12 @@ const Detail = {
     headerReview.innerHTML = 'Review';
 
     try {
+      restoContainer.innerHTML = createSkeletonDetailTemplate();
+      userRateContainer.innerHTML = createSkeletonReviewTemplate(3);
       const resto = await RestoDbSource.detailResto(url.id);
+      restoContainer.innerHTML = '';
       restoContainer.innerHTML = createRestoDetailTemplate(resto.restaurant);
+      userRateContainer.innerHTML = '';
 
       resto.restaurant.customerReviews.forEach((userItem) => {
         userRateContainer.innerHTML += createCustomerReviewTemplate(userItem);
