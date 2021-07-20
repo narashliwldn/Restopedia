@@ -6,7 +6,6 @@ const Favorite = {
   async render() {
     return `
     <hero-banner></hero-banner>
-      <div id="loading"></div>
       <div class="content">
         <div class="lists">
           <h2 class="list_label">Resto Favoritku</h2>
@@ -17,6 +16,14 @@ const Favorite = {
   },
 
   async afterRender() {
+    let scriptElement = document.querySelector('script[src="https://kit.fontawesome.com/54d44760a9.js"]');
+
+    if (!scriptElement) {
+      scriptElement = document.createElement('script');
+      scriptElement.src = 'https://kit.fontawesome.com/54d44760a9.js';
+      document.body.appendChild(scriptElement);
+    }
+
     const restoContainer = document.querySelector('#restos');
     restoContainer.innerHTML = createSkeletonTemplate(3);
     const restos = await FavoriteRestoIdb.getAllResto();

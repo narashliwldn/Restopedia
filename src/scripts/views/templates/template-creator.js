@@ -4,7 +4,7 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const createRestoDetailTemplate = (resto) => `
   <h2 tabindex="0" class="resto_title">${resto.name}</h2>
-  <img tabindex="0" class="resto_image lazyload" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
+  <img tabindex="0" class="resto_image lazyload" src="placeholder.jpeg" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
   <h3 tabindex="0" class="header_detail">Information</h3>
   <div class="resto_info">
     <h4 tabindex="0" class="header_resto_info">Rating</h4>
