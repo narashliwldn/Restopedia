@@ -1,5 +1,5 @@
 import FavoriteRestoIdb from '../../data/favoriteresto-idb';
-import { createRestoItemTemplate, createSkeletonTemplate } from '../templates/template-creator';
+import { createRestoItemTemplate, createSkeletonItemTemplate } from '../templates/template-creator';
 import SpinnerLoading from '../templates/spinner-loading';
 
 const Favorite = {
@@ -25,7 +25,7 @@ const Favorite = {
     }
 
     const restoContainer = document.querySelector('#restos');
-    restoContainer.innerHTML = createSkeletonTemplate(3);
+    restoContainer.innerHTML = createSkeletonItemTemplate(3);
     const restos = await FavoriteRestoIdb.getAllResto();
     const skiplink = document.querySelector('.skip-link');
 

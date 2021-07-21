@@ -82,7 +82,7 @@ const createSkeletonItemTemplate = (count) => {
   return template;
 };
 const createSkeletonDetailTemplate = () => `<h2 tabindex="0" class="resto_title skeleton">Nama Resto</h2>
-  <img tabindex="0" class="resto_image lazyload" src="placeholder.jpeg" alt="skeleton" />
+  <img tabindex="0" class="resto_image lazyload" src="placeholder.jpeg" style="min-width: 100%" alt="skeleton" />
   <h3 tabindex="0" class="header_detail skeleton">Information</h3>
   <div class="resto_info">
     <h4 tabindex="0" class="header_resto_info skeleton">Rating</h4>
@@ -95,25 +95,25 @@ const createSkeletonDetailTemplate = () => `<h2 tabindex="0" class="resto_title 
       <p tabindex="0" class="skeleton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sequi ullam ad mollitia cupiditate aut iure officia, voluptate, sapiente modi quisquam est quod quas recusandae quo saepe atque nisi blanditiis.</p>
     <h4 tabindex="0" class="header_resto_info skeleton">Kategori Menu</h4>
       <ul class="resto_category skeleton">
-        <li>menu</li>
-        <li>menu</li>
+        <li class="skeleton">menu</li>
+        <li class="skeleton">menu</li>
       </ul>
     <h3 tabindex="0" class="header_detail skeleton">Menu</h3>
     <div class="resto_menu">
       <div class="card content-card">
       <h4 tabindex="0" class="skeleton">Menu Makanan</h4>
-        <ul class="skeleton">
-          <li>menu</li>
-          <li>menu</li>
-          <li>menu</li>
+        <ul>
+          <li class="skeleton">menu</li>
+          <li class="skeleton">menu</li>
+          <li class="skeleton">menu</li>
         </ul>
       </div>
       <div class="card content-card">
       <h4 tabindex="0" class="skeleton">Menu Minuman</h4>
         <ul class="skeleton">
-          <li>menu</li>
-          <li>menu</li>
-          <li>menu</li>
+          <li class="skeleton">menu</li>
+          <li class="skeleton">menu</li>
+          <li class="skeleton">menu</li>
         </ul>
       </div>
     </div>
