@@ -27,9 +27,7 @@ const Favorite = {
     const restoContainer = document.querySelector('#restos');
     restoContainer.innerHTML = createSkeletonItemTemplate(3);
     const restos = await FavoriteRestoIdb.getAllResto();
-    const skiplink = document.querySelector('.skip-link');
 
-    skiplink.style.display = 'none';
     restoContainer.innerHTML = '';
 
     if (restos.length === 0) {

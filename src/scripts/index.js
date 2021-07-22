@@ -17,7 +17,9 @@ const app = new App({
 });
 
 window.addEventListener('hashchange', () => {
-  app.renderPage();
+  if (window.location.hash.substr(1) !== 'content') {
+    app.renderPage();
+  }
 });
 
 window.addEventListener('DOMContentLoaded', () => {

@@ -53,7 +53,6 @@ const Detail = {
     const loading = document.querySelector('#loading');
     const skiplink = document.querySelector('.skip-link');
 
-    skiplink.style.display = 'none';
     loading.innerHTML = SpinnerLoading();
     headerReview.innerHTML = 'Review';
 
