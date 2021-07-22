@@ -17,7 +17,7 @@ const app = new App({
 });
 
 window.addEventListener('hashchange', () => {
-  if (window.location.hash.substr(1) !== 'content') {
+  if (window.location.hash.substr(1) !== 'maincontent') {
     app.renderPage();
   }
 });
